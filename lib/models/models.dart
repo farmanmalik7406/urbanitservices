@@ -94,3 +94,14 @@ class Item {
         imageUrl.hashCode;
   }
 }
+
+class CartModel {
+  final Item item;
+  int qty;
+
+  CartModel({required this.item, required this.qty});
+}
+
+class CartItems {
+  static List<CartModel> items = [];
+}

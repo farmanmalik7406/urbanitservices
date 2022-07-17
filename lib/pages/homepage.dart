@@ -1,10 +1,10 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:urbanitservices/models/models.dart';
 import 'package:urbanitservices/pages/drawer.dart';
 import 'package:urbanitservices/utils/itemWidget.dart';
+import 'package:urbanitservices/utils/utils.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -43,9 +43,9 @@ class _HomePageState extends State<HomePage> {
       ),
       drawer: const MyDrawer(),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => {},
-        child: Icon(Icons.shopping_cart),
+        onPressed: () => {Navigator.pushNamed(context, MyRoutes.cartRoute)},
         backgroundColor: Colors.blueGrey,
+        child: const Icon(Icons.shopping_cart),
       ),
     );
   }

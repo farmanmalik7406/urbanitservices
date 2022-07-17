@@ -13,7 +13,7 @@ class DetailView extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(),
       bottomNavigationBar: ButtonBar(
-        buttonPadding: EdgeInsets.all(16.0),
+        buttonPadding: const EdgeInsets.all(16.0),
         children: [
           Text(
             "\u{20B9}${item.price.toString()}",
@@ -21,10 +21,10 @@ class DetailView extends StatelessWidget {
           ),
           ElevatedButton(
               onPressed: () {},
-              child: Text("Add to cart"),
               style: TextButton.styleFrom(
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20.0)))),
+                      borderRadius: BorderRadius.circular(20.0))),
+              child: const Text("Add to cart")),
         ],
       ),
       body: Center(
@@ -35,20 +35,18 @@ class DetailView extends StatelessWidget {
           children: [
             Image.network(item.imageUrl),
             Expanded(
-                child: Container(
-              child: Column(children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(item.name,
-                      style: const TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 30)),
-                ),
-                Text(
-                  item.desc,
-                  style: const TextStyle(color: Colors.grey, fontSize: 20),
-                ),
-              ]),
-            ))
+                child: Column(children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(item.name,
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold, fontSize: 30)),
+              ),
+              Text(
+                item.desc,
+                style: const TextStyle(color: Colors.grey, fontSize: 20),
+              ),
+            ]))
           ],
         )),
       )),
